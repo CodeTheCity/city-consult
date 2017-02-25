@@ -1,0 +1,77 @@
+For each consultation, there has to be a 'consultation entity' in the DB to attach everything to.
+
+Our consultations are, for these purposes, always about what should be done, so we can always talk about the actions.
+
+We first offer an action that might be done, query people about the current situation, positive results of action, negative results of action, then ask them if they agree or disagree that the action should be done. This allows the user to explore what they think with respect to the action before answering since it is possible their opinion will change in the course of the queries.
+
+What is explored is what is the current situation, positive results of the action, and negative results of the action.
+
+Questions:
+How much instruction and example information must be provided?
+How to handle input error control?
+Future:
+The consultations might have records for personal information, but we can try to add that later.
+Users might be able to introduce their own issue.
+How the action can be facilitated?
+What are the social values that are encouraged/discouraged by the action?
+Addition critical questions.
+Support for claims about current situation, positive and negative results.
+
+Need a DB for consultation instances to gather information from each user about a particular issue.
+
+DB:Consultations
+
+Welcome message:
+"Welcome. There are is an issue that are currently under consultation. These are actions that you think should be done. The current issues under consultation are: " Write DB: ConsultationIssue
+
+DB:ConsultationIssue
+
+Personal opinion statement:
+"We would like to know your opinion on what action should be done. The action is ConsultationIssue”
+
+Justification current situation statement:
+"We would like to understand your views about the current situation related to the issue.
+Please express your statements about current situations as  simple, separate statements."
+
+Write input to DB: JustificationCurrentSituation
+
+DB: JustificationCurrentSituation
+
+Subsequent justification current situation statement:
+"Is there another matter about the current situation related to the issue? If you have no other statement, then please enter `I have no other statement about the current situation'."
+
+If not `I have no other statement about the current situation', write input to DB: JustificationCurrentSituation
+
+If `I have no other statement about the current situation', go to Initial positive action result.
+
+Initial positive action result: "We would like to understand what you think will be the results of the action.
+Please state each of your results as a simple, separate statement."
+
+DB: ActionPostiveResult
+
+Subsequent positive action result: "Is there another positive result for this action? If you have no other positive result of the action, then please enter `I have no other positive result'."
+
+If not `I have no other positive result of the action', write input to DB: ActionPositiveResult
+
+If `I have no other positive result', go to ActionNegativeResult.
+
+Initial negative action result: "We would like to understand what you think will be the negative results of the action.
+Please state each of your negative results as a simple, separate statement."
+
+DB: ActionNegativeResult
+
+Subsequent negative action result: "Is there another negative result for this action? If you have no other negative result of the action, then please enter `I have no other negative result'."
+
+If not `I have no other negative result of the action', write input to DB: ActionPositiveResult
+
+If `I have no other negative result', go to ConsultationOpinion.
+
+Consultation opinion: “Now that we understand what you think about the current situation and the positive and negative results of the action, we would like to know whether you agree or disagree that” DB: ConsultationIssue. “Please write `Agree’ or `Disagree’.”
+
+Write input to DB: ConsultationOpinion
+
+DB: ConsultationOpinion
+
+Ending consultation: “Thank you very much for participating in this consulation. It is very helpful to understand your views, which will be helpful to the City in coming to a decision.”
+
+Disconnect.
