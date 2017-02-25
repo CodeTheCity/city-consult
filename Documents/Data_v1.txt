@@ -16,6 +16,8 @@ How the action can be facilitated?
 What are the social values that are encouraged/discouraged by the action?
 Addition critical questions.
 Support for claims about current situation, positive and negative results.
+Links to articles related to the statements, e.g. using google search.
+Comparison to the local vote, giving people facts to help people understand.
 
 Need a DB for consultation instances to gather information from each user about a particular issue.
 
