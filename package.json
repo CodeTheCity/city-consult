@@ -1,6 +1,9 @@
 {
-  "name": "GameEngineServer",
-  "version": "0.0.1",
+  "name": "MysqlConnectionApp",
+  "version": "1.0.0",
   "description": "Welcome to the text world adventure",
-  "dependencies": {}
+  "dependencies": {"express": "^4.13.4",
+  					"mysql":"^2.10.2"
+ }
 }
+
