@@ -20,8 +20,10 @@ client.on('connection',function(socket){
   //on client input of name 'input'
   socket.on('input', function(stdin){
     stdout = "";
-    userstage = userstage + 1;
+    //userstage = Math.floor(userstage + 10);
     stdout = bot.conv(stdin, userstage);
+    userstage = stdout[0];
+    stdout.shift() //remove first element in array
     for (var i in stdout) {
       socket.emit('output',stdout[i]);
     }

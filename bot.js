@@ -25,19 +25,20 @@ Main bot logic for teh bot is stored here. Needs Server.js to run.
     //Split the stdin into an UPPERCASE array divided by "space"
     var splitstring = stdin.toUpperCase().split(" ");
     //bot logic goes here
-    switch (userstage){
-      case 1:
-        stdout[0] = "What would be the positive impact of this action?"
+    stdout[0] = userstage + 10;
+    switch (stdout[0]){
+      case 10:
+        stdout[1] = "What would be the positive impact of this action?"
         break;
-      case 2:
-        stdout[0] = "What would be a negative impact of this action?"
+      case 20:
+        stdout[1] = "What would be a negative impact of this action?"
         break;
-      case 3:
-        stdout[0] = "On the whole, do you think we should progress with this action? "
+      case 30:
+        stdout[1] = "On the whole, do you think we should progress with this action? "
         break;
       default:
-        stdout[0] = "Thanks, thats been really helpful!"
-        stdout[1] = "Bye now, have a nice day. (referesh to do this again)"
+        stdout[1] = "Thanks, thats been really helpful!"
+        stdout[2] = "Bye now, have a nice day. (referesh to do this again)"
         break;
     }
 
