@@ -1,0 +1,26 @@
+https://www.researchgate.net/publication/222133027_Practical_reasoning_as_presumptive_argumentation_using_action_based_alternating_transition_systems
+
+AS1 In the current circumstances R
+We should perform action A
+Which will result in new circumstances S
+Which will realise goal G
+Which will promote some value V.
+
+
+CQ1: Are the believed circumstances true?
+CQ2: Assuming the circumstances, does the action have the stated consequences?
+CQ3: Assuming the circumstances and that the action has the stated consequences, will the action bring about the
+desired goal?
+CQ4: Does the goal realise the value stated?
+CQ5: Are there alternative ways of realising the same consequences?
+CQ6: Are there alternative ways of realising the same goal?
+CQ7: Are there alternative ways of promoting the same value?
+CQ8: Does doing the action have a side effect which demotes the value?
+CQ9: Does doing the action have a side effect which demotes some other value?
+CQ10: Does doing the action promote some other value?
+CQ11: Does doing the action preclude some other action which would promote some other value?
+CQ12: Are the circumstances as described possible?
+CQ13: Is the action possible?
+CQ14: Are the consequences as described possible?
+CQ15: Can the desired goal be realised?
+CQ16: Is the value indeed a legitimate value?
