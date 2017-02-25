@@ -5,7 +5,6 @@ An AI dog for you to train
 (function(){
   //global variable go here
 
-
   module.exports.setup = function(){
     //set-up function used when bot is first called
 
@@ -16,6 +15,9 @@ An AI dog for you to train
     var stdout = "";
     var splitstring = stdin.toUpperCase().split(" ");
     //bot logic goes here
-    
+
+    //demo response
+    var stdout = "I am a demo response!";
+    return stdout;
   }
 }());

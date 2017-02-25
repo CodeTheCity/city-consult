@@ -12,19 +12,11 @@ client.on('connection',function(socket){
   socket.emit('output',"You have been connected!");
   socket.emit('output',"########################");
   bot.setup();
-  socket.emit('output',"Robutt is ready for you....");
-  socket.emit('output',"say 'treat' when he does something good to reinforce the action");
+  socket.emit('output',"The bot is ready for you....");
   //on client input of name 'input'
   socket.on('input', function(stdin){
     var stdout = "";
     stdout = bot.conv(stdin);
     socket.emit('output',stdout);
     });
-  setInterval(function(){
-    console.log(1-Math.exp(-bot.boredom()));
-    if (Math.random()>(1-Math.exp(-bot.boredom()))){
-      stdout = bot.conv("");
-      socket.emit('output',stdout);
-    }
-  }, 1000);
   });
