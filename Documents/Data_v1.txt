@@ -6,6 +6,10 @@ We first offer an action that might be done, query people about the current situ
 
 What is explored is what is the current situation, positive results of the action, and negative results of the action.
 
+ToDos:
+1. Limit the input sentence length to 200 characters and character set, e.g nothing but letters, numbers, and regular punctuation (comma, period, quote, exclamation, question).  This will make things more compact and more clear. We want short, but not twitter. Ask for full sentences, not ’twitter-speak’.
+2. The instructions/guidance does not have to be written as I wrote it below.
+
 Questions:
 How much instruction and example information must be provided?
 How to handle input error control?
