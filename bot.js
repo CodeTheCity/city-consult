@@ -26,13 +26,13 @@ Main bot logic for teh bot is stored here. Needs Server.js to run.
     var splitstring = stdin.toUpperCase().split(" ");
     //bot logic goes here
     switch (userstage){
-      case 0:
+      case 1:
         stdout[0] = "What would be the positive impact of this action?"
         break;
-      case 1:
+      case 2:
         stdout[0] = "What would be a negative impact of this action?"
         break;
-      case 2:
+      case 3:
         stdout[0] = "On the whole, do you think we should progress with this action? "
         break;
       default:

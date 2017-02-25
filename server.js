@@ -20,8 +20,8 @@ client.on('connection',function(socket){
   //on client input of name 'input'
   socket.on('input', function(stdin){
     stdout = "";
-    stdout = bot.conv(stdin, userstage);
     userstage = userstage + 1;
+    stdout = bot.conv(stdin, userstage);
     for (var i in stdout) {
       socket.emit('output',stdout[i]);
     }
