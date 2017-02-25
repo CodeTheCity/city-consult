@@ -11,12 +11,17 @@ client.on('connection',function(socket){
   socket.emit('output',"########################");
   socket.emit('output',"You have been connected!");
   socket.emit('output',"########################");
-  bot.setup();
-  socket.emit('output',"The bot is ready for you....");
+  var stdout = "";
+  stdout = bot.setup();
+  for (var i in stdout) {
+    socket.emit('output',stdout[i]);
+  }
   //on client input of name 'input'
   socket.on('input', function(stdin){
-    var stdout = "";
+    stdout = "";
     stdout = bot.conv(stdin);
-    socket.emit('output',stdout);
+    for (var i in stdout) {
+      socket.emit('output',stdout[i]);
+    }
     });
   });
