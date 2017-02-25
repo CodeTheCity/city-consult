@@ -1,0 +1,40 @@
+<!--Set DOCTYPE for HTML5-->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>JS-Terminal</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+ <body>
+    <div id="terminal">
+    	<ul id="output">
+        <!--Empty unordered list-->
+      </ul>
+      <!--Below list place input box-->
+    		<div class="cmd-panel">
+          <table class="cmd-table">
+            <tr>
+              <td class="cmd-prompt">
+                <!--space for in-line prompt, i.e. "user$>" normally-->
+                default_user>
+              </td>
+              <td class="cmd-input">
+                <!--user input area, this is a multiline text box-->
+                <textarea id="input" class="cmd-input-text" autofocus rows="5">
+                </textarea>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+  </body>
+		<script type="text/javascript">
+			var version = "0.0.1";
+		</script>
+  <script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
+
+  <script type="text/javascript" src="js/terminal.js"> </script>
+</body>
+
+</html>
