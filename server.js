@@ -6,6 +6,7 @@ var bot = require("./bot.js"); //imports bot script
 //on new client connection
 client.on('connection',function(socket){
   //log that client is connected
+  var userstage = 0;
   console.log('new client detected');
   //send a message to client (can also send objects)
   socket.emit('output',"########################");
@@ -19,7 +20,8 @@ client.on('connection',function(socket){
   //on client input of name 'input'
   socket.on('input', function(stdin){
     stdout = "";
-    stdout = bot.conv(stdin);
+    stdout = bot.conv(stdin, userstage);
+    userstage = userstage + 1;
     for (var i in stdout) {
       socket.emit('output',stdout[i]);
     }
