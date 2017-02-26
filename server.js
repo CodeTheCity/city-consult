@@ -2,6 +2,7 @@
 var client = require('socket.io').listen(8080).sockets;
 var seed = Math.random();
 var bot = require("./bot.js"); //imports bot script
+//var bot = require("./mongo.js"); //imports mongo script for database
 
 //on new client connection
 client.on('connection',function(socket){
@@ -12,6 +13,9 @@ client.on('connection',function(socket){
   socket.emit('output',"########################");
   socket.emit('output',"You have been connected!");
   socket.emit('output',"########################");
+  //socket.emit('output',mongo.connect());
+  socket.emit('output',"########################");
+
   var stdout = "";
   stdout = bot.setup();
   for (var i in stdout) {
