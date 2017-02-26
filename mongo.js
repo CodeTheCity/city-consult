@@ -46,13 +46,8 @@
   };
   module.exports.findCons = function(){
     var cityConsultModel = mongoose.model('Consult',cityConsultSchema);
-    stdout = [];
-
     return cityConsultModel.find({}, function(err,data){
     	if (err) throw err;
-      //console.log('I found it');
-      //console.log (data)
-      //console.log('I found it2');
       return data;
     });
     var x = cityConsultModel.find({}, function(err,data){

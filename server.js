@@ -10,12 +10,26 @@ client.on('connection',function(socket){
   //log that client is connected
   var userstage = "currentSituation";
   var userobj = {};
+  var Cons = [];
+  var Pros = [];
   console.log('New client detected');
   //send a message to client (can also send objects)
   socket.emit('output',"########################");
   socket.emit('output',"You have been connected!");
   socket.emit('output',"########################");
-  socket.emit('output',"########################");
+
+  //preload some database items to discuss with user later in session
+  //these are async calls but all get logged to a local variable for later use
+  mongo.findCons().then(function(data){
+    Cons[0] = data[Math.round(Math.random()*data.length)]['negativeResult'];
+    Cons[1] = data[Math.round(Math.random()*data.length)]['negativeResult'];
+    Cons[2] = data[Math.round(Math.random()*data.length)]['negativeResult'];
+    Pros[0] = data[Math.round(Math.random()*data.length)]['positiveResult'];
+    Pros[1] = data[Math.round(Math.random()*data.length)]['positiveResult'];
+    Pros[2] = data[Math.round(Math.random()*data.length)]['positiveResult'];
+    console.log ("> 3 random existing positive reasons", Pros);
+    console.log ("> 3 random existing negative reasons", Cons);
+  });
 
   var stdout = "";
   stdout = bot.setup();
