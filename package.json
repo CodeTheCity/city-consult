@@ -2,8 +2,9 @@
   "name": "MysqlConnectionApp",
   "version": "1.0.0",
   "description": "Welcome to the text world adventure",
-  "dependencies": {"express": "^4.13.4",
-  					"mysql":"^2.10.2"
- }
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.8.4",
+    "mysql": "^2.10.2"
+  }
 }
-
