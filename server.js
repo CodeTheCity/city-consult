@@ -2,7 +2,8 @@
 var client = require('socket.io').listen(8080).sockets;
 var seed = Math.random();
 var bot = require("./bot.js"); //imports bot script
-//var mongo = require("./mongo.js"); //imports mongo script for database
+mongo = require("./mongo.js"); //imports mongo script for database
+mongo.connect();
 
 //on new client connection
 client.on('connection',function(socket){
