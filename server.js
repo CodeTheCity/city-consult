@@ -3,14 +3,14 @@ var client = require('socket.io').listen(8080).sockets;
 var seed = Math.random();
 var bot = require("./bot.js"); //imports bot script
 mongo = require("./mongo.js"); //imports mongo script for database
-mongo.connect();
+mongo.connect(); //connect to teh mongo datbase
 
 //on new client connection
 client.on('connection',function(socket){
   //log that client is connected
   var userstage = "currentSituation";
   var userobj = {};
-  console.log('new client detected');
+  console.log('New client detected');
   //send a message to client (can also send objects)
   socket.emit('output',"########################");
   socket.emit('output',"You have been connected!");

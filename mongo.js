@@ -3,8 +3,9 @@
   module.exports.connect = function(){
     var express= require('express');
     mongoose=require('mongoose');
-    var application = express();
+    //var application = express();
     //Connecting to the mongodb database
+    console.log('Attempting to connect to the database...');
     mongoose.connect('mongodb://username:password@ds161209.mlab.com:61209/cityconsultdb');
     //Creating a schema for how the data will look like
     cityConsultSchema=new mongoose.Schema({
@@ -33,8 +34,8 @@
     //module.exports=rout;
     //setting the port number for nodejs to listen to
     //incase you have other appliations running on that server it helps node identify when to act you canalso add an ip to this
-    application.listen('1337');
-    console.log('Now listening on port 1337');
+  //  application.listen('1337');
+    console.log('Connection to database successful!');
   };
   module.exports.save = function(stdin){
   var cityConsultModel = mongoose.model('Consult',cityConsultSchema);
