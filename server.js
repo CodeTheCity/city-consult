@@ -2,18 +2,18 @@
 var client = require('socket.io').listen(8080).sockets;
 var seed = Math.random();
 var bot = require("./bot.js"); //imports bot script
-//var bot = require("./mongo.js"); //imports mongo script for database
+//var mongo = require("./mongo.js"); //imports mongo script for database
 
 //on new client connection
 client.on('connection',function(socket){
   //log that client is connected
-  var userstage = 0;
+  var userstage = "currentSituation";
+  var userobj = {};
   console.log('new client detected');
   //send a message to client (can also send objects)
   socket.emit('output',"########################");
   socket.emit('output',"You have been connected!");
   socket.emit('output',"########################");
-  //socket.emit('output',mongo.connect());
   socket.emit('output',"########################");
 
   var stdout = "";
@@ -25,9 +25,11 @@ client.on('connection',function(socket){
   socket.on('input', function(stdin){
     stdout = "";
     //userstage = Math.floor(userstage + 10);
-    stdout = bot.conv(stdin, userstage);
+    stdout = bot.conv(stdin, userstage, userobj);
     userstage = stdout[0];
+    userobj = stdout[1];
     stdout.shift() //remove first element in array
+    stdout.shift()
     for (var i in stdout) {
       socket.emit('output',stdout[i]);
     }

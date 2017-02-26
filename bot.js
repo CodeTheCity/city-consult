@@ -18,32 +18,44 @@ Main bot logic for teh bot is stored here. Needs Server.js to run.
     return stdout;
   },
 
-  module.exports.conv = function(stdin, userstage){
+  module.exports.conv = function(stdin, userstage, userobj){
     //clear stdout. Just to be safe!
     var stdout = [];
 
     //Split the stdin into an UPPERCASE array divided by "space"
     var splitstring = stdin.toUpperCase().split(" ");
     //bot logic goes here
-    stdout[0] = userstage + 10;
+    stdout[0] = userstage;
+    stdout[1] = userobj
     switch (stdout[0]){
-      case 10:
-        stdout[1] = "What would be the positive impact of this action?"
+      case "currentSituation":
+        stdout[0] = "positiveResult"
+        stdout[1][userstage] = stdin;
+        stdout[2] = "What would be the positive impact of this action?"
         break;
-      case 20:
-        stdout[1] = "What would be a negative impact of this action?"
+      case "positiveResult":
+        stdout[0] = "negativeResult"
+        stdout[1][userstage] = stdin;
+        stdout[2] = "What would be a negative impact of this action?"
         break;
-      case 30:
-        stdout[1] = "On the whole, do you think we should progress with this action? "
+      case "negativeResult":
+        stdout[0] = "yourDesicion"
+        stdout[1][userstage] = stdin;
+        stdout[2] = "On the whole, do you think we should progress with this action? "
+        break;
+      case "yourDesicion":
+        stdout[0] = "END"
+        stdout[1][userstage] = stdin;
+        console.log(stdout[1]);
+        //mongo.save(stdout[1]); //push data to database
+        stdout[2] = "Thanks, thats been really helpful!"
+        stdout[3] = "Bye now, have a nice day. (referesh to do this again)"
         break;
       default:
-        stdout[1] = "Thanks, thats been really helpful!"
-        stdout[2] = "Bye now, have a nice day. (referesh to do this again)"
+        ///go away
+        stdout[2] = "I said Bye."
         break;
     }
-
-    //demo response
-    //stdout[0] = "I am a demo response!";
 
     return stdout;
   }
