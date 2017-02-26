@@ -9,6 +9,7 @@ What is explored is what is the current situation, positive results of the actio
 ToDos:
 1. Limit the input sentence length to 200 characters and character set, e.g nothing but letters, numbers, and regular punctuation (comma, period, quote, exclamation, question).  This will make things more compact and more clear. We want short, but not twitter. Ask for full sentences, not ’twitter-speak’.
 2. The instructions/guidance does not have to be written as I wrote it below.
+3. Entering the text from the user should be done by CR, not moving the cursor from the text window to a button, clicking on a button, then moving back to the text window. Too repetitive for no purpose.
 
 Questions:
 How much instruction and example information must be provided?
