@@ -26,7 +26,7 @@ Once installed its handy to add node to the system path. To do this on Windows, 
 ```dos
 SET PATH=C:\Program Files\Nodejs;%PATH%
 ```
-All this does it let you access the **node** function on the command-prompt from any directory on our pc.
+All this does is let you access the **node** function on the command-prompt from any directory on our pc.
 
 _If you plan to use node for other projects you can also look at installing at the **node package manager (npm)** but its not required for this._
 
@@ -34,7 +34,7 @@ Now in the command-prompt terminal navigate (cd = change directory) to the city-
 ```dos
 cd C:\Documents\Git Files\city-consult
 ```
-and now run the server.js file using node by typing:
+and now run the **server.js** file using node by typing:
 ```dos
 node server.js
 ```
@@ -43,8 +43,10 @@ This should now display the following in the terminal:
 Attempting to connect to the database...
 Connection to database successful!
 ```
-This lets you know that the server is running and that we can connected to the mongo database!
-Please keep this command-prompt session open to keep the server running.
+This lets you know that the server is running and that we are connected to the Mongo database (see further down)!
+**Please keep this command-prompt session open to keep the server running.**
+To stop the Server press **Ctrl+C** inside the terminal
+
 ### Client
 #### Intro
 The client is a web-browser based interface to the server. It looks like a normal messaging interface where the server can pose questions and the user can type answers in response.
@@ -58,6 +60,7 @@ Find the **index.html** file in the **city-consult/New Client** folder and open 
 
 You should be presented with the chat session.
 If the top text box is filled with text you will have successfully connected to the server!
+_If it is empty, check that the server is running._
 
 If you now look back to the server command-prompt session you should see a new line acknowledging the new client:
 ```dos
