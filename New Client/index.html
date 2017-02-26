@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <div id="container">
+            <h3>City Consult</h3>
+
+            <div id="chatbox">    
+                <div id="response">
+                </div>
+                <div style="background-color: white;">
+                    <input type="text" id="input"/>
+                    <button id="submit" onclick="botChange();">Send</button>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+        <script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
+
+        <script>
+
+                        document.onkeydown = checkKey;
+                        document.onclick = checkMouse;
+                        var socket;
+                        connect();
+
+                        function checkKey(e) {
+                            e = e || window.event;
+                            switch (e.keyCode) {
+                                case 13:
+                                    // enter pressed
+                                    e.preventDefault();
+                                    var input = document.getElementById("input").value;
+                                    document.getElementById("input").value = "";
+                                    //console.log(input);
+                                    socket.emit('input', input);
+                                    addtolist("Human:- " + input);
+                                    break;
+                            }
+                        }
+
+                        function checkMouse(e) {
+
+                            document.getElementById("input").focus();
+                        }
+
+                        function connect(address, port) {
+                            var address = 'http://127.0.0.1';
+                            var port = '8080';
+                            socket = io.connect(address + ':' + port);
+                            //listen for server output
+                            socket.on('output', function (data) {
+                                addtolist("Bot:- " + data);
+                            });
+                            document.getElementById("input").value = "";
+                        }
+
+                        function addtolist(input) {
+
+                            var child = document.createElement("div");
+                            var t = document.createTextNode(input);
+                            child.appendChild(t);
+                            response.appendChild(child);
+                            //alert(li.id);
+                            //scrolling to end
+                            document.getElementById("response").lastChild.scrollIntoView(true);
+                        }
+
+                        //to be tested
+                        var loadJS = function (url, implementationCode, location) {
+                            //url is URL of external file, implementationCode is the code
+                            //to be called from the file, location is the location to
+                            //insert the <script> element
+
+                            var scriptTag = document.createElement('script');
+                            scriptTag.src = url;
+
+                            scriptTag.onload = implementationCode;
+                            scriptTag.onreadystatechange = implementationCode;
+
+                            location.appendChild(scriptTag);
+                        };
+
+
+
+        </script>
+
+    </body>
+</html>
