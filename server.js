@@ -14,9 +14,9 @@ client.on('connection',function(socket){
   var Pros = [];
   console.log('New client detected');
   //send a message to client (can also send objects)
-  socket.emit('output',"########################");
-  socket.emit('output',"You have been connected!");
-  socket.emit('output',"########################");
+//  socket.emit('output',"########################");
+//  socket.emit('output',"You have been connected!");
+  //socket.emit('output',"########################");
 
   //preload some database items to discuss with user later in session
   //these are async calls but all get logged to a local variable for later use

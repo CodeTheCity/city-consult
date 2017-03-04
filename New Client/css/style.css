@@ -1,44 +1,104 @@
 body{
     padding : 0;
     margin : 0;
-    background-color: rgb(0, 42, 85);
+    background-color:#ecf0f1;
+    font-family: 'Exo', sans-serif;
+
 }
 #container{
-    width : 500px;
-    height : 412px;
-    border: 1px solid black;
+
+    width : 400px;
+    border-radius: 8px 8px 0 0;
     margin : auto;
     margin-top : 50px;
     color : white;
-    background-color : rgb(255,0,0);
-    
+
+
 }
-h3{
-    text-align: center;
-    text-shadow: 1px 1px black;
-    
+.chat_head{
+      background: #6579FD ;
+      padding: 15px;
+      border-radius: 8px 8px 0 0;
+        text-align: center;
+      position: relative;
+
+}
+
+.human:before{
+  content: ' ';
+  	position: absolute;
+  	width: 0;
+  	height: 0;
+    right: -5px;
+  	left: auto;
+    top: 5px;
+  	bottom: auto;
+  	border: 8px solid;
+  	border-color: #3080e8 transparent transparent transparent;
+}
+.bot:before{
+  content: ' ';
+  	position: absolute;
+  	width: 0;
+  	height: 0;
+  left:-5px;
+  right:auto;
+  top: 5px;
+  bottom: auto;
+  border: 5px solid;
+  border-color: white transparent transparent transparent;
+
 }
 #response{
-    border : 1px solid black;
-    height : 300px;   
-    width: 488px;
-    overflow-y: auto;
-    padding : 5px;
-    
-    background-color: white;
-    color : black;
+
+      color : black;
+      height : 450px;
+      width: 381px;
+      overflow-y: auto;
+      padding-right:10px;
+      padding-left: 10px;
+      padding-top: 3px;
+      padding-bottom: 5px;
+      background-color: white;
+
 }
-    
+.human, .bot{
+      width: 328px;
+      box-shadow:1px 1px 1px #808088;
+     border-radius:10px;
+     margin:15px;
+     padding: 2px;
+}
+.bot{
+  align: left;
+  background: white;
+  color:  #6579FD ;
+  position: relative;
+
+
+}
+.human{
+  align:right;
+  background: #3080e8;
+  color: white;
+  position: relative;
+
+
+
+}
 #input{
     float : left;
-    width : 435px;
-    height : 35px;
-    border-right : 1px solid black;
+    width : 395px;
+    height : 40px;
+
 }
 #submit{
     float : right;
     width : 58px;
     height : 41px;
 }
-
-
+#close{
+  cursor: pointer;
+  left: 135px;
+  position:relative;
+}
