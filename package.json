@@ -4,7 +4,7 @@
   "description": "Welcome to the text world adventure",
   "dependencies": {
     "express": "^4.13.4",
-    "mongoose": "^4.8.4",
+    "mongoose": "^5.7.7",
     "mysql": "^2.10.2"
   }
 }
